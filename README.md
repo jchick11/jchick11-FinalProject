@@ -1,3 +1,21 @@
 Hello!
 
 11/18 = Today I worked on trying to get my code up and working for the final project. I was able to do the neural network no problem although some things might need to be tweaked later. I cannot get the code from the actual paper to work in R Studio, VSCode as R, or in VSCode translated into Python. I'm going to have to work on it in R I believe. The R code makes more sense to me, but for some reason I cannot find the package they used to analyze their data.
+
+Introduction:
+Over the summer I did research on ectoparasites in Peromyscus maniculatus gracilis in Northern Wisconsin and the Upper Peninsula of Michigan. At the end of the summer I had to do analysis on my data and present it to my fellow researchers and our advisors. I analyzed data on the ectoparasite communities in the mice based on habitat, but my advisor and I were interested to see what about the mice or environment caused different amounts of infestations of fleas. In doing further research I found a paper titled "Of mice, ticks, and fleas: Host behavior and co-occuring parasites" by Merlin Caron-Levesque and Vincent Careau. This paper used a double Hurdle Model to evaluate the relationships between body mass, sex, age, reproductive status, ectoparasite abundance, and precipitation and the number of ticks found on the mice. After looking over their data and finding that theirs was quite similar to mine, and seeing that they had their code in supplimentary materials, I decided I wanted to try this to see if I could find the connection between fleas, ticks, and the number of recaptures per individual. This idea came from a separate paper I found that claimed that ectoparasites would weaken the immune responses of mice leading to them moving around less and thus leading to fewer recaptures, and it also claimed that higher mass would lead to higher ectoparasite prevalence.
+
+Data Collection and Preprocessing:
+The data from the original paper can be found in this repository under the name cjz-2022-0107supplb (3).csv. Here you can find their raw data organized quite similarly to my final data with the main difference being that their data was collected over many years while mine was done in 6 weeks so I have much less data points. My original data from the summer is under the file ECTOS2025.xlsx. In order to most effectively conduct my analysis I copied all of my mice from each grid and put them into a separate file titled ECTOSFORANALYSIS.xlsx. I also added a column with the total number of ticks in order to analyze that as well. 
+
+My analysis from the summer is in the pdf file titled Ectoparasite2025.pdf where you can find more background information on the mice and ectoparasites. You can also find my initial figures and analysis that led to the question, what causes differences in ectoparasite abundance and differences in recaptures.
+
+Modeling and Analysis:
+The initial code from the paper by Levesque and Careau can be found in the file FinalProjectCode.ipynb. This code was very helpful in getting my hurdle model to work in R, however the authors forgot to include the packages they used to run the analysis so I had to find those by doing some research on my own. The final code for mine can be found in the file titled Hurdle Models Final .docx which includes the packages I used in R and the figures for my hurdle models
+
+As for the SciKitLearn model I used I decided to go with a neural network which you can find under the file EctoNeuralNetwork.ipynb. I chose to go with this analysis method because it allows you to find complex patterns in your data in a simplified way and are especially useful when there is not a linear relationship. In the case of my data this was great because I was looking at multiple variables that would have been very hard to show together otherwise. Ultimately there was no relationship found between the variables but it was a very simple way to figure that out.
+
+Model Tuning and Comparison:
+All of the information on my model tuning can be found in the code I used in EctoNeuralNetwork.ipynb and Hurdle Models Final .docx. The model comparisons and explanations can be found in the file Final Figures Explained .pptx.
+
+Discussion and Final Thoughts:
